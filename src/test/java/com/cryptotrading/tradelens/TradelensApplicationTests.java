@@ -1,10 +1,10 @@
-package com.lgutraders.TradeLens;
+package com.cryptotrading.tradelens;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TradeLensApplicationTests {
+class TradelensApplicationTests {
 
 	@Test
 	void contextLoads() {
