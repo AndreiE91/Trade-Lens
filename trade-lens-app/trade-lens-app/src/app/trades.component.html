@@ -1,0 +1,26 @@
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>User ID</th>
+        <th>Symbol</th>
+        <th>Entry Price</th>
+        <th>Close Price</th>
+        <th>SL Price</th>
+        <th>Risk Percentage</th>
+        <th>Date Closed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trade of trades">
+        <td>{{trade.id}}</td>
+        <td>{{trade.user_id}}</td>
+        <td>{{trade.symbol}}</td>
+        <td>{{trade.entry_price}}</td>
+        <td>{{trade.close_price}}</td>
+        <td>{{trade.sl_price}}</td>
+        <td>{{trade.risk_percentage}}</td>
+        <td>{{trade.date_closed}}</td>
+      </tr>
+    </tbody>
+  </table>

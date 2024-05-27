@@ -1,0 +1,24 @@
+<!-- update-trade.component.html -->
+<div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <h2>Update Trade</h2>
+    <form [formGroup]="form" (ngSubmit)="updateTrade()" style="display: flex; flex-direction: column; align-items: flex-start;">
+        <label for="tradeId">Trade ID:</label>
+        <input type="number" id="tradeId" formControlName="tradeId" style="max-width: 200px;">
+        <label for="userId">User ID:</label>
+        <input type="number" id="userId" formControlName="userId" style="max-width: 200px;">
+        <label for="newSymbol">Symbol:</label>
+        <input type="text" id="newSymbol" formControlName="newSymbol" style="max-width: 200px;">
+        <label for="newEntryPrice">Entry Price:</label>
+        <input type="number" id="newEntryPrice" formControlName="newEntryPrice" style="max-width: 200px;">
+        <label for="newClosePrice">Close Price:</label>
+        <input type="number" id="newClosePrice" formControlName="newClosePrice" style="max-width: 200px;">
+        <label for="newSlPrice">SL Price:</label>
+        <input type="number" id="newSlPrice" formControlName="newSlPrice" style="max-width: 200px;">
+        <label for="newRiskPercentage">Risk Percentage:</label>
+        <input type="number" id="newRiskPercentage" formControlName="newRiskPercentage" style="max-width: 200px;">
+        <label for="newDateClosed">Date Closed:</label>
+        <input type="text" id="newDateClosed" formControlName="newDateClosed" style="max-width: 200px;">
+        <p *ngIf="message">{{ message }}</p>
+        <button type="submit" style="max-width: 200px;">Update Trade</button>
+      </form>
+  </div>

@@ -1,22 +1,25 @@
-<div>
-  <button (click)="navigateToHome()">Home</button>
-  <button (click)="navigateToLogin()">Login</button>
-  <button (click)="navigateToRegister()">Register</button>
-  <button (click)="navigateToUsers()">View Users</button>
-  <button (click)="navigateToFindUserById()">Find User by ID</button>
-  <button (click)="navigateToAddUser()">Add User</button>
-  <button (click)="navigateToUpdateUser()">Update User</button>
-  <button (click)="navigateToDeleteUser()">Delete User</button>
-  <button (click)="navigateToTrades()">View Trades</button>
-  <button (click)="navigateToFindTradeById()">Find Trade by ID</button>
-  <button (click)="navigateToAddTrade()">Add Trade</button>
-  <button (click)="navigateToUpdateTrade()">Update Trade</button>
-  <button (click)="navigateToDeleteTrade()">Delete Trade</button>
-  <button (click)="logout()">Log Out</button>
+<div class="main-buttons">
+  <button class="big-button" (click)="navigateToHome()"><i class="fas fa-home"></i> Home</button>
+  <button class="big-button" (click)="navigateToLogin()"><i class="fas fa-sign-in-alt"></i> Login</button>
+  <button class="big-button" (click)="navigateToRegister()"><i class="fas fa-user-plus"></i> Register</button>
+</div>
+
+<div class="other-buttons">
+  <button (click)="navigateToUsers()"><i class="fas fa-users"></i> View Users</button>
+  <button (click)="navigateToFindUserById()"><i class="fas fa-search"></i> Find User by ID</button>
+  <button (click)="navigateToAddUser()"><i class="fas fa-user-plus"></i> Add User</button>
+  <button (click)="navigateToUpdateUser()"><i class="fas fa-user-edit"></i> Update User</button>
+  <button (click)="navigateToDeleteUser()"><i class="fas fa-user-minus"></i> Delete User</button>
+  <button (click)="navigateToTrades()"><i class="fas fa-exchange-alt"></i> View Trades</button>
+  <button (click)="navigateToFindTradeById()"><i class="fas fa-search"></i> Find Trade by ID</button>
+  <button (click)="navigateToAddTrade()"><i class="fas fa-plus"></i> Add Trade</button>
+  <button (click)="navigateToUpdateTrade()"><i class="fas fa-edit"></i> Update Trade</button>
+  <button (click)="navigateToDeleteTrade()"><i class="fas fa-minus"></i> Delete Trade</button>
 </div>
 
 <div *ngIf="currentUser; else notLoggedIn">
-  Logged in as {{currentUser.username}} with role {{currentUser.role}}
+  <p>Logged in as {{currentUser.username}} with role {{currentUser.role}}</p>
+  <button (click)="logout()"><i class="fas fa-sign-out-alt"></i> Log Out</button>
 </div>
 <ng-template #notLoggedIn>
   <div>Not logged in.</div>

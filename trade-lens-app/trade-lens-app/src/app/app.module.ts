@@ -16,6 +16,11 @@ import { FindUserComponent } from './find-user.component';
 import { AddUserComponent } from './add-user.component';
 import { UpdateUserComponent } from './update-user.component';
 import { DeleteUserComponent } from './delete-user.component';
+import { TradesComponent } from './trades.component';
+import { AddTradeComponent } from './add-trade.component';
+import { UpdateTradeComponent } from './update-trade.component';
+import { DeleteTradeComponent } from './delete-trade.component';
+import { FindTradeComponent } from './find-trade.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { DeleteUserComponent } from './delete-user.component';
     FindUserComponent,
     AddUserComponent,
     UpdateUserComponent,
-    DeleteUserComponent
+    DeleteUserComponent,
+    TradesComponent,
+    AddTradeComponent,
+    UpdateTradeComponent,
+    DeleteTradeComponent,
+    FindTradeComponent,
     ],
   imports: [
     BrowserModule,

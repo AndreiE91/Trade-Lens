@@ -13,11 +13,12 @@ import { FindUserComponent } from './find-user.component';
 import { AddUserComponent } from './add-user.component';
 import { UpdateUserComponent } from './update-user.component';
 import { DeleteUserComponent } from './delete-user.component';
-// import { TradesComponent } from './trades.component';
-// import { FindTradeComponent } from './find-trade.component';
-// import { AddTradeComponent } from './add-trade.component';
-// import { UpdateTradeComponent } from './update-trade.component';
-// import { DeleteTradeComponent } from './delete-trade.component';
+import { UserGuard } from './user.guard';
+import { TradesComponent } from './trades.component';
+import { FindTradeComponent } from './find-trade.component';
+import { AddTradeComponent } from './add-trade.component';
+import { UpdateTradeComponent } from './update-trade.component';
+import { DeleteTradeComponent } from './delete-trade.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,15 +26,15 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent, canActivate: [AdminGuard] },
   { path: 'home', component: HomeComponent},
   { path: 'insufficient-permissions', component: InsufficientPermissionsComponent },
-  { path: 'find-user', component: FindUserComponent },
+  { path: 'find-user', component: FindUserComponent , canActivate: [UserGuard]},
   { path: 'add-user', component: AddUserComponent, canActivate: [AdminGuard]}, 
-  { path: 'update-user', component: UpdateUserComponent },
+  { path: 'update-user', component: UpdateUserComponent , canActivate: [UserGuard]},
   { path: 'delete-user', component: DeleteUserComponent, canActivate: [AdminGuard]},
-//   { path: 'trades', component: TradesComponent },
-//   { path: 'find-trade', component: FindTradeComponent },
-//   { path: 'add-trade', component: AddTradeComponent },
-//   { path: 'update-trade', component: UpdateTradeComponent },
-//   { path: 'delete-trade', component: DeleteTradeComponent },
+  { path: 'trades', component: TradesComponent , canActivate: [AdminGuard]},
+  { path: 'find-trade', component: FindTradeComponent , canActivate: [UserGuard]},
+  { path: 'add-trade', component: AddTradeComponent , canActivate: [UserGuard]},
+  { path: 'update-trade', component: UpdateTradeComponent , canActivate: [UserGuard]},
+  { path: 'delete-trade', component: DeleteTradeComponent , canActivate: [UserGuard]},
   { path: '', component: HomeComponent },
   { path: '**', redirectTo: 'home' }
 ];

@@ -1,0 +1,9 @@
+<div>
+    <h2>Delete Trade</h2>
+    <form [formGroup]="form" (ngSubmit)="deleteTrade()">
+      <label for="tradeId">Trade ID:</label>
+      <input type="text" id="tradeId" formControlName="tradeId">
+      <button type="submit">Delete Trade</button>
+    </form>
+    <p>{{ message }}</p>
+  </div>

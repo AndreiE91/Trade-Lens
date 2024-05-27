@@ -1,0 +1,21 @@
+<!-- find-trade.component.html -->
+<div>
+    <h2>Find Trade</h2>
+    <form [formGroup]="form" (ngSubmit)="findTrade()">
+      <label for="tradeId">Trade ID:</label>
+      <input type="text" id="tradeId" formControlName="tradeId">
+      <button type="submit">Find Trade</button>
+    </form>
+    <div *ngIf="trade">
+      <h3>Trade Details</h3>
+      <p> ID: {{ trade.id }} </p>
+      <p> User ID: {{ trade.user_id }} </p>
+      <p> Symbol: {{ trade.symbol }} </p>
+      <p> Entry Price: {{ trade.entry_price }} </p>
+      <p> Close Price: {{ trade.close_price }} </p>
+      <p> SL Price: {{ trade.sl_price }} </p>
+      <p> Risk Percentage: {{ trade.risk_percentage }} </p>
+      <p> Date Closed: {{ trade.date_closed }} </p>
+    </div>
+    <p *ngIf="message">{{ message }}</p>
+</div>
