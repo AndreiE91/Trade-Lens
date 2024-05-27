@@ -1,0 +1,19 @@
+<!-- update-user.component.html -->
+<div style="display: flex; flex-direction: column; align-items: flex-start;">
+    <h2>Update User</h2>
+    <form [formGroup]="form" (ngSubmit)="updateUser()" style="display: flex; flex-direction: column; align-items: flex-start;">
+      <label for="userId">User ID:</label>
+      <input type="text" id="userId" formControlName="userId" style="max-width: 200px;">
+  
+      <label for="newUserName">New User Name:</label>
+      <input type="text" id="newUserName" formControlName="newUserName" required style="max-width: 200px;">
+  
+      <label for="newEmail">New Email:</label>
+      <input type="email" id="newEmail" formControlName="newEmail" required style="max-width: 200px;">
+  
+      <label for="newPassword">New Password:</label>
+      <input type="password" id="newPassword" formControlName="newPassword" required style="max-width: 200px;">
+  
+      <button type="submit" style="max-width: 200px;">Update User</button>
+    </form>
+  </div>

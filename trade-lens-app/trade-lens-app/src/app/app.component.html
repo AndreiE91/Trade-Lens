@@ -1,0 +1,25 @@
+<div>
+  <button (click)="navigateToHome()">Home</button>
+  <button (click)="navigateToLogin()">Login</button>
+  <button (click)="navigateToRegister()">Register</button>
+  <button (click)="navigateToUsers()">View Users</button>
+  <button (click)="navigateToFindUserById()">Find User by ID</button>
+  <button (click)="navigateToAddUser()">Add User</button>
+  <button (click)="navigateToUpdateUser()">Update User</button>
+  <button (click)="navigateToDeleteUser()">Delete User</button>
+  <button (click)="navigateToTrades()">View Trades</button>
+  <button (click)="navigateToFindTradeById()">Find Trade by ID</button>
+  <button (click)="navigateToAddTrade()">Add Trade</button>
+  <button (click)="navigateToUpdateTrade()">Update Trade</button>
+  <button (click)="navigateToDeleteTrade()">Delete Trade</button>
+  <button (click)="logout()">Log Out</button>
+</div>
+
+<div *ngIf="currentUser; else notLoggedIn">
+  Logged in as {{currentUser.username}} with role {{currentUser.role}}
+</div>
+<ng-template #notLoggedIn>
+  <div>Not logged in.</div>
+</ng-template>
+
+<router-outlet></router-outlet>

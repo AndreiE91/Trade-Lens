@@ -1,0 +1,16 @@
+<!-- find-user.component.html -->
+<div>
+    <h2>Find User</h2>
+    <form [formGroup]="form" (ngSubmit)="findUser()">
+      <label for="userId">User ID:</label>
+      <input type="text" id="userId" formControlName="userId">
+      <button type="submit">Find User</button>
+    </form>
+    <div *ngIf="user">
+      <h3>User Details</h3>
+      <p>Username: {{ user.username }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Role: {{ user.role }}</p>
+    </div>
+    <p *ngIf="message">{{ message }}</p>
+</div>

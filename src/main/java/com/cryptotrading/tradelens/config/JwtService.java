@@ -1,5 +1,6 @@
 package com.cryptotrading.tradelens.config;
 
+import com.cryptotrading.tradelens.entity.UserEntity;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
@@ -27,7 +28,11 @@ public class JwtService {
     }
 
     public String generateToken(UserDetails userDetails) {
-        return generateToken(new HashMap<>(), userDetails);
+        Map<String, Object> claims = new HashMap<>();
+        if (userDetails instanceof UserEntity userEntity) {
+            claims.put("role", userEntity.getRole().toString());
+        }
+        return generateToken(claims, userDetails);
     }
 
     public String generateToken(

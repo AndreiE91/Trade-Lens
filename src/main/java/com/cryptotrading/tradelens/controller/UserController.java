@@ -38,7 +38,7 @@ public class UserController {
         return userService.findById(id);
     }
 
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping
     @Valid
     public UserEntity saveUser(@RequestBody UserEntity userEntity) {
@@ -52,7 +52,7 @@ public class UserController {
         return userService.updateUser(userEntity);
     }
 
-    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping(value = "/{id}")
     public void deleteUser(@PathVariable("id") Long id) {
         userService.deleteUser(id);

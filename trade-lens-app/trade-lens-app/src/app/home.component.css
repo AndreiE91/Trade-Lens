@@ -1,0 +1,13 @@
+.container {
+    text-align: center;
+  }
+  
+  .logo {
+    width: 900px; 
+    height: auto;
+  }
+  
+  .title {
+    font-size: 24px;
+    color: #333;
+  }
