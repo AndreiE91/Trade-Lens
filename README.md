@@ -5,15 +5,18 @@ Welcome to the Trade Lens repository! This web application is designed to showca
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Features](#features)
-3. [Architecture](#architecture)
-4. [Frontend - Angular 14](#frontend---angular-14)
-5. [Backend - Java 17 with Spring Boot](#backend---java-17-with-spring-boot)
-6. [Database Schema](#database-schema)
-7. [Security](#security)
-8. [Setup and Installation](#setup-and-installation)
-9. [Usage](#usage)
-10. [Contributing](#contributing)
-11. [License](#license)
+3. [Use Case Diagram](#use-case-diagram)
+4. [Architecture](#architecture)
+5. [Frontend - Angular 14](#frontend---angular-14)
+6. [Backend - Java 17 with Spring Boot](#backend---java-17-with-spring-boot)
+7. [Class Diagram](#class-diagram)
+8. [Database Schema](#database-schema)
+9. [Database Diagram](#database-diagram)
+10. [Security](#security)
+11. [Setup and Installation](#setup-and-installation)
+12. [Usage](#usage)
+13. [Contributing](#contributing)
+14. [License](#license)
 
 ## Introduction
 Trade Lens is a web application that offers a comprehensive view of trade analytics. It features user and trade management with a secure login system. The slogan of the app, visible on the main page logo, is "Trade Lens - the Future of Trade Analytics".
@@ -24,6 +27,9 @@ Trade Lens is a web application that offers a comprehensive view of trade analyt
 - **Authentication:** JWT-based authentication with role-based access control (USER and ADMIN).
 - **Frontend:** Developed using Angular 14, with intuitive page routing and a responsive design.
 - **Security:** Password hashing and secure API endpoints.
+
+## Use Case Diagram
+![Home](images/img_usecase.png)
 
 ## Architecture
 Trade Lens is divided into two main parts:
@@ -40,11 +46,17 @@ The frontend of Trade Lens is developed using Angular 14. It includes:
 ## Backend - Java 17 with Spring Boot
 The backend is built with Java 17 and Spring Boot. It handles all API requests, user authentication, and data management.
 
+## Class Diagram
+![Home](images/img_class.png)
+
 
 ## Database Schema
 The database consists of two main entities: `User` and `Trade`, with a one-to-many relationship.
 - **User:** Represents an application user with fields for ID, username, password (hashed), and roles.
 - **Trade:** Represents a trade entry with fields for ID, trade details, and a foreign key to the user.
+
+## Database Diagram
+![Home](images/img_database.png)
 
 
 ## Security
@@ -76,6 +88,7 @@ The database consists of two main entities: `User` and `Trade`, with a one-to-ma
     ```
 
 ### Backend Setup
+#### Maven Installation
 1. Navigate to the backend directory:
     ```sh
     cd backend
@@ -95,6 +108,16 @@ The database consists of two main entities: `User` and `Trade`, with a one-to-ma
     ```sh
     mvn spring-boot:run
     ```
+#### IntelliJ Installation
+1. Open folder as project in IntelliJ
+2. Configure the database connection in `application.properties`:
+    ```properties
+    spring.datasource.url=jdbc:mysql://localhost:3306/tradelens
+    spring.datasource.username=root
+    spring.datasource.password=yourpassword
+    spring.jpa.hibernate.ddl-auto=update
+    ```
+3. Run TradelensApplication.java and wait for IntelliJ to automatically install dependencies and build the project
 
 ## Usage
 1. Register a new user via the registration page.
