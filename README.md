@@ -29,7 +29,7 @@ Trade Lens is a web application that offers a comprehensive view of trade analyt
 - **Security:** Password hashing and secure API endpoints.
 
 ## Use Case Diagram
-![Home](images/img_usecase.png)
+![Usecase Diagram](images/img_usecase.png)
 
 ## Architecture
 Trade Lens is divided into two main parts:
@@ -47,7 +47,7 @@ The frontend of Trade Lens is developed using Angular 14. It includes:
 The backend is built with Java 17 and Spring Boot. It handles all API requests, user authentication, and data management.
 
 ## Class Diagram
-![Home](images/img_class.png)
+![Class Diagram](images/img_class.png)
 
 
 ## Database Schema
@@ -56,7 +56,7 @@ The database consists of two main entities: `User` and `Trade`, with a one-to-ma
 - **Trade:** Represents a trade entry with fields for ID, trade details, and a foreign key to the user.
 
 ## Database Diagram
-![Home](images/img_database.png)
+![Database Diagram](images/img_database.png)
 
 
 ## Security
